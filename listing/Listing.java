@@ -1,4 +1,7 @@
-package fr.cnam.tp9;
+package fr.cnam.tp10.listing;
+
+import fr.cnam.tp10.exceptions.PersonAlreadyHereException;
+import fr.cnam.tp10.exceptions.UnknownPersonException;
 
 import java.util.Collection;
 import java.util.Map;
@@ -23,7 +26,7 @@ public interface Listing {
      * @param staff  le membre du personnel
      * @param office le bureau occupé par ce membre
      */
-    void recordArrival(String staff, String office);
+    void recordArrival(String staff, String office) throws PersonAlreadyHereException;
 
     /**
      * Obtient le bureau occupé par un membre du personnel.
@@ -31,7 +34,7 @@ public interface Listing {
      * @param staff le membre du personnel
      * @return Une chaine de caractère représentant le bureau occupé par le membre du personnel
      */
-    String officeOf(String staff);
+    String officeOf(String staff) throws UnknownPersonException;
 
     /**
      * Modifie le bureau d'un membre du personnel.
@@ -39,14 +42,14 @@ public interface Listing {
      * @param staff  le membre du personnel
      * @param office le nouveau bureau du membre du personnel
      */
-    void changeOfficeFor(String staff, String office);
+    void changeOfficeFor(String staff, String office) throws UnknownPersonException;
 
     /**
      * Enregistre le départ d'un membre du personnel.
      *
      * @param staff le membre du personnel
      */
-    void recordDeparture(String staff);
+    void recordDeparture(String staff) throws UnknownPersonException;
 
     /**
      * Obtient l'ensemble des membres du personnel.
