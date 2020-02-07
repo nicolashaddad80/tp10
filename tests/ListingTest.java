@@ -1,5 +1,8 @@
-package fr.cnam.tp9;
+package fr.cnam.tp10.tests;
 
+import fr.cnam.tp10.exceptions.PersonAlreadyHereException;
+import fr.cnam.tp10.exceptions.UnknownPersonException;
+import fr.cnam.tp10.listing.Listing;
 import org.junit.Before;
 import org.junit.Test;
 
